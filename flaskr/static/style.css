@@ -19,7 +19,7 @@ body {
 }
 
 .navbar-brand {
-    font-size: xxx-large;
+    font-size: 250%;
     /*display: block;*/
     padding: 10px 40px;
 }
@@ -30,6 +30,18 @@ body {
     padding: 10px 40px;
 }
 
+.webname {
+    color: black;
+}
+
+.username {
+    color: white;
+}
+
+.text_size {
+    font-size: 20px;
+}
+
 h1 {
     text-align: center;
     font-family: Arial, serif;
@@ -37,28 +49,33 @@ h1 {
 
 form {
     background: white;
-    margin: 50px auto;
+    margin: 25px auto 25px auto;
 }
 
 label {
     display: inline-block;
     width: 60px;
+    text-align: justify;
     text-align-last: justify;
     margin-right: 10px;
 }
 
-.content {
-    padding: 0 1rem 1rem;
-}
-
 .content > header {
     border-bottom: 1px solid lightgray;
-    display: flex;
-    align-items: flex-end;
 }
 
-.content > header h1 {
-    flex: auto;
-    margin: 1rem 0 0.25rem 0;
+h2 {
+    color: #377bad;
+    text-align: center;
+    font-family: Consolas, sans-serif;
 }
 
+.row > div {
+    color: slategray;
+    font-style: italic;
+}
+
+article p {
+    font-size: 25px;
+    font-family: 等线, sans-serif;
+}

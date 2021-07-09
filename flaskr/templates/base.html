@@ -1,9 +1,8 @@
 <!doctype html>
+<html lang="zh">
 <title>{% block title %}{% endblock %} - Flaskr</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
 <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-{#<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>#}
-{#<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>#}
 
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -12,11 +11,11 @@
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <h1 class="navbar-brand">Flaskr</h1>
+            <h1 class="webname navbar-brand">极简网站</h1>
         </div>
         <ul class="nav navbar-nav navbar-right">
             {% if g.user %}
-                <li><span>{{ g.user['username'] }}</span>
+                <li><a href="#"><span class="username">用户名:{{ g.user['username'] }}</span></a>
                 <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
                     {% else %}
                 <li><a href="{{ url_for('auth.register') }}"><span
@@ -37,3 +36,4 @@
     {% endfor %}
     {% block content %}{% endblock %}
 </section>
+</html>

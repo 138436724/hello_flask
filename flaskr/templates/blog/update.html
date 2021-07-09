@@ -1,19 +1,36 @@
 {% extends 'base.html' %}
 
 {% block header %}
-<h1>{% block title %}Edit "{{ post['title'] }}"{% endblock %}</h1>
+    <h1>{% block title %}正在修改 "{{ post['title'] }}"{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
-<form method="post">
-    <label for="title">Title</label>
-    <input name="title" id="title" value="{{ request.form['title'] or post['title'] }}" required>
-    <label for="body">Body</label>
-    <textarea name="body" id="body">{{ request.form['body'] or post['body'] }}</textarea>
-    <input type="submit" value="Save">
-</form>
-<hr>
-<form action="{{ url_for('blog.delete', id=post['id']) }}" method="post">
-    <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
-</form>
+
+    <div class="container">
+        <form method="post" class="col-xs-offset-3 col-xs-6">
+            <div class="form-group col-xs-offset-1">
+                <label for="title">标题:</label><br/>
+                <input name="title" id="title" value="{{ request.form['title'] or post['title'] }}" required>
+            </div>
+            <div class="form-group col-xs-offset-1">
+                <label for="body">正文:<br/></label><br/>
+                <textarea name="body" id="body" rows="8"
+                          cols="30">{{ request.form['body'] or post['body'] }}</textarea>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-3">
+                    <input type="submit" value="保存">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    {#    <hr>#}
+
+    <div class="container">
+        <form action="{{ url_for('blog.delete', id=post['id']) }}" method="post" class="col-xs-offset-8 col-xs-1">
+                <input class="btn btn-danger" type="submit" value="删除" onclick="return confirm('你真的要删除这篇文章吗?');">
+        </form>
+    </div>
+
 {% endblock %}
