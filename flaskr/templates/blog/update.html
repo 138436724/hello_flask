@@ -25,8 +25,6 @@
         </form>
     </div>
 
-    {#    <hr>#}
-
     <div class="container">
         <form action="{{ url_for('blog.delete', id=post['id']) }}" method="post" class="col-xs-offset-8 col-xs-1">
                 <input class="btn btn-danger" type="submit" value="删除" onclick="return confirm('你真的要删除这篇文章吗?');">

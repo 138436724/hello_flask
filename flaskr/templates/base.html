@@ -11,7 +11,7 @@
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <h1 class="webname navbar-brand">极简网站</h1>
+            <h1 class="web_name navbar-brand">极简网站</h1>
         </div>
         <ul class="nav navbar-nav navbar-right">
             {% if g.user %}
@@ -32,7 +32,7 @@
         {% block header %}{% endblock %}
     </header>
     {% for message in get_flashed_messages() %}
-        <div class="flash">{{ message }}</div>
+        <div class="text-center btn-danger">{{ message }}</div>
     {% endfor %}
     {% block content %}{% endblock %}
 </section>
